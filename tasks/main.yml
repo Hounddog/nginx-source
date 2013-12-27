@@ -1,5 +1,15 @@
 ---
 #These tasks install nginx
+- name: Installing vital packages
+  apt: pkg={{item}} state=latest update-cache=yes
+  with_items:
+  - build-essential
+  - libpcre++-dev
+  - unzip
+  - git-core
+  - openssl
+  - libssl-dev
+
 - name: Get installed modules for nginx
   shell: nginx -V
   register: nginx_flags
