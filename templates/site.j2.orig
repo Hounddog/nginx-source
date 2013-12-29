@@ -5,7 +5,11 @@ server {
   {% if k.find('location') == -1 and k != 'file_name' %}
   {{ k }} {{ v }};
   {% endif %}
+<<<<<<< HEAD
 {% endfor -%} 
+=======
+{% endfor %} 
+>>>>>>> 7e6908910cc184f27857534b6ce8aa6b2d1de42a
 
 {% for k,v in item.server.iteritems() if k.find('location') != -1 %}
   location {{ v.name }} {
